@@ -6,15 +6,31 @@
 
 There are several potential pitfalls in this task. If the output of the program is not correct, run the debugger, and follow the program execution and the evolution of the variables step-by-step!
 
-Hint: note that the additions and subtractions are alternating. It might be worth to compute the sum such that two terms are computed in each iteration of the loop. 
+Hint: note that the additions and subtractions are alternating. It might be worth to compute the sum such that two terms are computed in each iteration of the loop.
 This way checking the loop variable whether it is even or odd is not necessary.
 
-Important: use real data types (float or double), since the result is not integer. In C, if two integer numbers are divided, the result will be integer as well. 
+Important: use real data types (float or double), since the result is not integer. In C, if two integer numbers are divided, the result will be integer as well.
 Hence, 1/3, in C, gives 0. However, 1.0/3 gives 0.333333 that is the correct value. We are going to discuss this issue at a later lecture.*/
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
 
-return 0;
+    int n;
+    scanf("%d", &n);
+    double pi = 1;
+    for (int z = 1; z < n; z++)
+    {
+        if (z % 2 == 0)
+        {
+            pi += (1 / (double)z + 2);
+        }
+        else
+        {
+            pi -= (1 / (double)z + 2);
+        }
+    }
+    printf("%lf\n", pi * 4);
+    return 0;
 }

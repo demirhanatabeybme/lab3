@@ -10,11 +10,19 @@ Write a program to compute it with the first 20 terms! Note that the factorial c
 
 Hint: if you have used nested loops, try to simplify your solution! A single loop is enough to solve the problem.*/
 
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-
-
-
+    int i = 0;
+    double j = 1;
+    double e = 1;
+    while (i < 20)
+    {
+        i++;
+        j *= i;
+        e += 1.0f / j;
+    }
+    printf("%2.10f\n", e);
+    return 0;
 }
